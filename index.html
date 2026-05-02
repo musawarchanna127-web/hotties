@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotties - Video Streaming</title>
+  <meta name="description" content="Watch the hottest videos online. Clean and minimal video streaming experience.">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #f8f9fa;
+      color: #1a1a1a;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo svg {
+      width: 18px;
+      height: 18px;
+      fill: #fff;
+    }
+
+    .site-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #1a1a1a;
+    }
+
+    /* ── Main ── */
+    main {
+      flex: 1;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* ── Video Card ── */
+    .video-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .video-card-header {
+      padding: 12px 20px;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .video-number {
+      background: #1a1a1a;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+    }
+
+    .video-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    /* ── Embed Wrapper (16:9) ── */
+    .embed-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: #000;
+    }
+
+    .embed-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ── Buttons ── */
+    .video-actions {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    @media (min-width: 480px) {
+      .video-actions {
+        flex-direction: row;
+      }
+    }
+
+    .btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.15s ease, transform 0.1s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn:hover {
+      opacity: 0.88;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: #f3f4f6;
+      color: #1a1a1a;
+      border: 1px solid #e5e7eb;
+    }
+
+    .btn svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: auto;
+      border-top: 1px solid #e5e7eb;
+      background: #fff;
+    }
+
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 18px 20px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="5,3 19,12 5,21"/>
+        </svg>
+      </div>
+      <span class="site-title">Hotties</span>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Video 1 -->
+    <div class="video-card">
+      <div class="video-card-header">
+        <span class="video-number">01</span>
+        <h2 class="video-title">Video 1</h2>
+      </div>
+      <div class="embed-wrapper">
+        <iframe src="https://drive.google.com/file/d/1aJmmyK-farDgqQZ9dFen4LI93kbdkqz0/preview" allow="autoplay; encrypted-media" allowfullscreen title="Video 1"></iframe>
+      </div>
+      <div class="video-actions">
+        <a class="btn btn-primary" href="https://drive.google.com/file/d/1aJmmyK-farDgqQZ9dFen4LI93kbdkqz0/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Watch Full Video – Server 1
+        </a>
+        <a class="btn btn-secondary" href="https://drive.google.com/file/d/1aJmmyK-farDgqQZ9dFen4LI93kbdkqz0/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Watch Full Video – Server 2
+        </a>
+      </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-card">
+      <div class="video-card-header">
+        <span class="video-number">02</span>
+        <h2 class="video-title">Video 2</h2>
+      </div>
+      <div class="embed-wrapper">
+        <iframe src="https://drive.google.com/file/d/1aOvuIwOvzsi2jjtKuNvFGPDKYI6u7P55/preview" allow="autoplay; encrypted-media" allowfullscreen title="Video 2"></iframe>
+      </div>
+      <div class="video-actions">
+        <a class="btn btn-primary" href="https://drive.google.com/file/d/1aOvuIwOvzsi2jjtKuNvFGPDKYI6u7P55/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Watch Full Video – Server 1
+        </a>
+        <a class="btn btn-secondary" href="https://drive.google.com/file/d/1aOvuIwOvzsi2jjtKuNvFGPDKYI6u7P55/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Watch Full Video – Server 2
+        </a>
+      </div>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="video-card">
+      <div class="video-card-header">
+        <span class="video-number">03</span>
+        <h2 class="video-title">Video 3</h2>
+      </div>
+      <div class="embed-wrapper">
+        <iframe src="https://drive.google.com/file/d/1J-UmYmvRiMXFgTuVDZIJsffOFQOssiub/preview" allow="autoplay; encrypted-media" allowfullscreen title="Video 3"></iframe>
+      </div>
+      <div class="video-actions">
+        <a class="btn btn-primary" href="https://drive.google.com/file/d/1J-UmYmvRiMXFgTuVDZIJsffOFQOssiub/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Watch Full Video – Server 1
+        </a>
+        <a class="btn btn-secondary" href="https://drive.google.com/file/d/1J-UmYmvRiMXFgTuVDZIJsffOFQOssiub/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Watch Full Video – Server 2
+        </a>
+      </div>
+    </div>
+
+    <!-- Video 4 -->
+    <div class="video-card">
+      <div class="video-card-header">
+        <span class="video-number">04</span>
+        <h2 class="video-title">Video 4</h2>
+      </div>
+      <div class="embed-wrapper">
+        <iframe src="https://drive.google.com/file/d/1RiUrXCpfqtg_8k2ohkP8JsE_EmsiTMNb/preview" allow="autoplay; encrypted-media" allowfullscreen title="Video 4"></iframe>
+      </div>
+      <div class="video-actions">
+        <a class="btn btn-primary" href="https://drive.google.com/file/d/1RiUrXCpfqtg_8k2ohkP8JsE_EmsiTMNb/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Watch Full Video – Server 1
+        </a>
+        <a class="btn btn-secondary" href="https://drive.google.com/file/d/1RiUrXCpfqtg_8k2ohkP8JsE_EmsiTMNb/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Watch Full Video – Server 2
+        </a>
+      </div>
+    </div>
+
+    <!-- Video 5 -->
+    <div class="video-card">
+      <div class="video-card-header">
+        <span class="video-number">05</span>
+        <h2 class="video-title">Video 5</h2>
+      </div>
+      <div class="embed-wrapper">
+        <iframe src="https://drive.google.com/file/d/1KKU3IdWhB05v5DhWGA3lHU_9urdTpN9J/preview" allow="autoplay; encrypted-media" allowfullscreen title="Video 5"></iframe>
+      </div>
+      <div class="video-actions">
+        <a class="btn btn-primary" href="https://drive.google.com/file/d/1KKU3IdWhB05v5DhWGA3lHU_9urdTpN9J/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Watch Full Video – Server 1
+        </a>
+        <a class="btn btn-secondary" href="https://drive.google.com/file/d/1KKU3IdWhB05v5DhWGA3lHU_9urdTpN9J/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Watch Full Video – Server 2
+        </a>
+      </div>
+    </div>
+
+    <!-- Video 6 -->
+    <div class="video-card">
+      <div class="video-card-header">
+        <span class="video-number">06</span>
+        <h2 class="video-title">Video 6</h2>
+      </div>
+      <div class="embed-wrapper">
+        <iframe src="https://drive.google.com/file/d/1TcoYZbuGqNRkDXM4GaaAtIoiIH2EKMK1/preview" allow="autoplay; encrypted-media" allowfullscreen title="Video 6"></iframe>
+      </div>
+      <div class="video-actions">
+        <a class="btn btn-primary" href="https://drive.google.com/file/d/1TcoYZbuGqNRkDXM4GaaAtIoiIH2EKMK1/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Watch Full Video – Server 1
+        </a>
+        <a class="btn btn-secondary" href="https://drive.google.com/file/d/1TcoYZbuGqNRkDXM4GaaAtIoiIH2EKMK1/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Watch Full Video – Server 2
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      © 2025 Hotties. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
